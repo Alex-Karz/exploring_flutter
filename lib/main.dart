@@ -16,35 +16,24 @@ class BallsApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(390, 844),
-        minTextAdapt: true,
-        builder: (context, snapshot) {
-          return ChangeNotifierProvider(
-            create: (context) => BubbleModelNotifier(),
-            child: Consumer<BubbleModelNotifier>(
-              builder: (context, model, child) {
-                return MaterialApp(
-                  home: Container(
-                    height: 1.sh,
-                    width: 1.sw,
-                    color: Colors.black87,
-                    child: Stack(
-                      children: [
-                        for (var index = 0; index < 69; index++)
-                          Balls(
-                            color: Color.fromRGBO(
-                                Random().nextInt(255),
-                                Random().nextInt(255),
-                                Random().nextInt(255),
-                                0.8),
-                          ),
-                      ],
-                    ),
+      designSize: const Size(390, 844),
+      minTextAdapt: true,
+      builder: (context, snapshot) {
+        return ChangeNotifierProvider(
+          create: (context) => BubbleModelNotifier(),
+          child: MaterialApp(
+            home: Stack(
+              children: [
+                for (var index = 0; index < 69; index++)
+                  Balls(
+                    color: Color.fromRGBO(Random().nextInt(255),
+                        Random().nextInt(255), Random().nextInt(255), 0.8),
                   ),
-                );
-              },
+              ],
             ),
-          );
-        });
+          ),
+        );
+      },
+    );
   }
 }
