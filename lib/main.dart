@@ -18,8 +18,8 @@ class BallsApp extends StatelessWidget {
       create: (context) => BubbleModelNotifier(),
       child: Consumer<BubbleModelNotifier>(
         builder: (context, model, child) {
-          return Material(
-            child: ColoredBox(
+          return MaterialApp(
+            home: ColoredBox(
               color: Colors.black87,
               child: Stack(
                 children: [
