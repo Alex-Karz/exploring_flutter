@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_app_advanced_youtube/balls.dart';
 import 'package:provider_app_advanced_youtube/bubbles_provider.dart';
@@ -19,7 +20,9 @@ class BallsApp extends StatelessWidget {
       child: Consumer<BubbleModelNotifier>(
         builder: (context, model, child) {
           return MaterialApp(
-            home: ColoredBox(
+            home: Container(
+              height: 1.sh,
+              width: 1.sw,
               color: Colors.black87,
               child: Stack(
                 children: [

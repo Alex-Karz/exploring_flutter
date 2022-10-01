@@ -1,25 +1,23 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+
 import 'package:provider_app_advanced_youtube/bubbles_provider.dart';
 
-class Balls extends StatefulWidget {
+// ignore: must_be_immutable
+class Balls extends StatelessWidget {
   final Color color;
   double? size;
 
   Balls({
-    super.key,
+    Key? key,
     required this.color,
     this.size,
-  });
+  }) : super(key: key);
 
-  @override
-  State<Balls> createState() => _BallsState();
-}
-
-class _BallsState extends State<Balls> {
   @override
   Widget build(BuildContext context) {
     var size = 0.1 + Random().nextInt(30) / 100 * 1.sw;
@@ -43,7 +41,7 @@ class _BallsState extends State<Balls> {
           height: size,
           width: size,
           decoration: BoxDecoration(
-            color: widget.color,
+            color: color,
             borderRadius: const BorderRadius.all(Radius.circular(200)),
           ),
         ),
