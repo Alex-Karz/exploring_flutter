@@ -6,11 +6,11 @@ import 'package:provider/provider.dart';
 import 'package:provider_app_advanced_youtube/bubbles_provider.dart';
 
 void main() {
-  runApp(NotMyBubbles());
+  runApp(const NotMyBubbles());
 }
 
 class NotMyBubbles extends StatelessWidget {
-  NotMyBubbles({
+  const NotMyBubbles({
     super.key,
   });
 
